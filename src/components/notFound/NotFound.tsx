@@ -1,4 +1,3 @@
-import { MouseEvent } from "react";
 import Button from "../button/Button";
 
 interface NotFoundProps {
@@ -9,7 +8,7 @@ const NotFound = ({ handleClick }: NotFoundProps) => {
   return (
     <div className="not-found">
       <p>Your search did not match any results.</p>
-      <Button active={true} handleClick={handleClick} />
+      <Button handleClick={handleClick} label="Reset" />
     </div>
   );
 };

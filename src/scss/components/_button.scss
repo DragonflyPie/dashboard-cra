@@ -4,6 +4,9 @@
   border-radius: 10px;
   background: $emerald;
   border: none;
+  font-family: $montserrat;
+  font-weight: 600;
+  font-size: 12px;
   color: white;
   text-decoration: none;
   display: inline-flex;
@@ -13,5 +16,9 @@
 
   &--inactive {
     background-color: $gray--inactive;
+  }
+
+  &:hover {
+    color: $gray--light;
   }
 }

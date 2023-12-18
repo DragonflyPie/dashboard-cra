@@ -1,0 +1,25 @@
+body {
+  font-family: $roboto;
+  background-color: $white--dirty;
+}
+
+h1 {
+  color: $gray--blackish;
+
+  font-size: 26px;
+  font-family: $montserrat;
+  font-weight: 700;
+  padding-bottom: 40px;
+}
+
+td:last-child {
+  border-radius: 0 3px 3px 0;
+}
+
+td:first-child {
+  border-radius: 3px 0 0 3px;
+}
+
+.semibold {
+  font-weight: 500;
+}

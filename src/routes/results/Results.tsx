@@ -1,4 +1,5 @@
 import { useLoaderData, useNavigate } from "react-router-dom";
+import { BackIcon } from "../../components/icons/BackIcon";
 
 interface ResultsProps {
   heading: string;
@@ -13,9 +14,10 @@ const Results = ({ heading }: ResultsProps) => {
     <div className="results">
       <h1 className="heading results__heading">{heading}</h1>
       <h2 className="results__name">{data.name}</h2>
-      <button className="back" onClick={() => navigate(-1)}>
-        Back
-      </button>
+      <a className="results__back" onClick={() => navigate(-1)}>
+        <BackIcon />
+        <p>Back</p>
+      </a>
     </div>
   );
 };

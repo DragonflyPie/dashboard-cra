@@ -1,4 +1,4 @@
-import SearchIcon from "./SearchIcon";
+import SearchIcon from "../icons/SearchIcon";
 
 interface SearchProps {
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;

@@ -1,0 +1,125 @@
+// .cell {
+//   white-space: nowrap;
+//   text-overflow: ellipsis;
+//   overflow: hidden;
+//   padding-right: 10px;
+// }
+
+// .tests-list__header {
+//   width: 100%;
+//   display: grid;
+//   grid-template-columns: 40% 1fr 1fr 20% 1fr;
+//   align-items: center;
+//   padding: 15px 12px;
+// }
+
+// .tests-list {
+//   padding-top: 30px;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   width: 100%;
+//   gap: 10px;
+// }
+
+// .test {
+//   width: 100%;
+//   position: relative;
+//   display: grid;
+//   grid-template-columns: 40% 1fr 1fr 20% 1fr;
+//   padding: 15px 12px;
+//   background-color: white;
+//   border-radius: 3px;
+//   overflow: hidden;
+//   align-items: center;
+
+//   &__coloring {
+//     position: absolute;
+//     background-color: red;
+//     width: 4px;
+//     height: 100%;
+//   }
+
+//   &__cell {
+//     text-transform: lowercase;
+
+//     &::first-letter {
+//       text-transform: uppercase;
+//     }
+//   }
+// }
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 5px;
+  font-family: $roboto;
+  color: $gray--table;
+
+  &__thead {
+    color: $gray--thead;
+    font-size: 11px;
+  }
+
+  &__thead-group {
+    width: 50px;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    transform: rotate(180deg);
+
+    &--desc {
+      transform: rotate(0);
+    }
+  }
+
+  &__tr {
+    height: 70px;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+
+    ::before {
+      content: "";
+      background-color: red;
+      width: 4px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 10px;
+    }
+  }
+
+  &__td {
+    vertical-align: middle;
+    padding-left: 15px;
+    padding-right: 12px;
+    overflow: hidden;
+
+    &[data-status="ONLINE"] {
+      color: $status-green;
+    }
+    &[data-status="PAUSED"] {
+      color: $status-orange;
+    }
+    &[data-status="STOPPED"] {
+      color: $status-red;
+    }
+  }
+
+  &__th {
+    padding-left: 15px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+
+    cursor: pointer;
+  }
+}

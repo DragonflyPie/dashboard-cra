@@ -1,5 +1,18 @@
 .results {
   padding: 41px 52px 49px 48px;
-  background-color: $white--dirty;
   min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  &__back {
+    margin-top: auto;
+    display: flex;
+    gap: 8px;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

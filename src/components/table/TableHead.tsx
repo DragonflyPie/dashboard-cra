@@ -14,20 +14,25 @@ const TableHead = ({
   sortBy,
   order,
 }: TableHeadProps) => {
-  const iconClass = classNames("thead__icon", {
-    "thead__icon--desc": order === "desc",
+  const iconClass = classNames("table__icon", {
+    "table__icon--desc": order === "desc",
   });
+
   return (
-    <thead>
+    <thead className="table__thead">
       <tr>
         {columns.map(({ label, accessor }) => {
+          if (accessor === "button") {
+            return <th key={accessor} />;
+          }
+
           return (
             <th
-              className="thead table__thead"
               key={accessor}
               onClick={() => handleChangeSorting(accessor)}
+              className="table__th"
             >
-              <div className="thead__wrapper">
+              <div className="table__thead-group">
                 {label}
                 {sortBy === accessor && (
                   <div className={iconClass}>

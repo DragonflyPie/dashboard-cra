@@ -12,7 +12,7 @@ import {
 } from "react-router-dom";
 import ErrorPage from "./routes/errorPage/ErrorPage";
 import Results from "./routes/results/Results";
-import { testLoader } from "./lib/loader";
+import { loader } from "./utils/loader";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -21,17 +21,16 @@ const root = ReactDOM.createRoot(
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route errorElement={<ErrorPage />}>
-      <Route path="/" element={<Navigate to="/dashboard" />} />
-      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/" element={<Dashboard />} />
       <Route
-        path="/finalize/:testId"
+        path="finalize/:testId"
         element={<Results heading="Finalize" />}
-        loader={testLoader}
+        loader={loader}
       />
       <Route
-        path="/results/:testId"
+        path="results/:testId"
         element={<Results heading="Results" />}
-        loader={testLoader}
+        loader={loader}
       />
     </Route>
   )

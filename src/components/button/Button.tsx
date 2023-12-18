@@ -1,18 +1,12 @@
-import cn from "classnames";
-
 interface ButtonProps {
-  active: boolean;
-  handleClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  handleClick: () => void;
+  label: string;
 }
 
-const Button = ({ active, handleClick }: ButtonProps) => {
-  const btnClass = cn("button", {
-    "button--inactive": !active,
-  });
-
+const Button = ({ handleClick, label }: ButtonProps) => {
   return (
-    <button onClick={handleClick} className={btnClass}>
-      {active ? "Results" : "Finalize"}
+    <button className="button" onClick={handleClick}>
+      {label}
     </button>
   );
 };
