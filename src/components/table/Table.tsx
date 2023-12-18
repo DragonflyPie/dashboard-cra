@@ -38,7 +38,7 @@ const Table = ({ data }: TableProps) => {
         order={order}
       />
 
-      <TableBody columns={columns} data={tableData} />
+      <TableBody data={tableData} />
     </table>
   );
 };

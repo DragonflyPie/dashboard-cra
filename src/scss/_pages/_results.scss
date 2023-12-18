@@ -1,14 +1,18 @@
 .results {
-  padding: 41px 52px 49px 48px;
+  padding: toRem(41) toRem(52) toRem(49) toRem(48);
   min-height: 100vh;
 
   display: flex;
   flex-direction: column;
 
+  &__heading {
+    padding-bottom: toRem(4);
+  }
+
   &__back {
     margin-top: auto;
     display: flex;
-    gap: 8px;
+    gap: toRem(19);
     cursor: pointer;
 
     &:hover {

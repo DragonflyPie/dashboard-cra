@@ -1,25 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500&display=swap");
+
 body {
   font-family: $roboto;
   background-color: $white--dirty;
 }
 
 h1 {
-  color: $gray--blackish;
-
-  font-size: 26px;
+  color: $blackish;
+  font-size: toRem(26);
   font-family: $montserrat;
   font-weight: 700;
-  padding-bottom: 40px;
+  line-height: toRem(40);
 }
 
-td:last-child {
-  border-radius: 0 3px 3px 0;
-}
-
-td:first-child {
-  border-radius: 3px 0 0 3px;
-}
-
-.semibold {
-  font-weight: 500;
+h2 {
+  font-family: $montserrat;
+  font-weight: 600;
+  font-size: toRem(14);
+  color: $blackish;
 }

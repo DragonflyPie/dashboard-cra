@@ -3,61 +3,31 @@ import DashboardLink from "../link/Link";
 
 interface TableBodyProps {
   data: JoinedTest[];
-  columns: Column[];
 }
 
-const TableBody = ({ data, columns }: TableBodyProps) => {
-  const renderCell = (accessor: Accessor, test: JoinedTest) => {
-    switch (accessor) {
-      case "button":
-        return (
-          <td key={accessor} className="table__td">
-            <DashboardLink active={test.status !== "DRAFT"} id={test.id} />
-          </td>
-        );
-      case "name":
-        return (
-          <td key={accessor} className="table__td semibold">
-            {test.name}
-          </td>
-        );
-      case "url":
-        return (
-          <td key={accessor} className="table__td">
-            {test.url}
-          </td>
-        );
-      case "status":
-        return (
-          <td
-            key={accessor}
-            className="table__td semibold"
-            data-status={test.status}
-          >
-            {capitalize(test.status)}
-          </td>
-        );
-
-      case "type":
-        return (
-          <td key={accessor} className="table__td ">
-            {formatType(test.type)}
-          </td>
-        );
-    }
-  };
+const TableBody = ({ data }: TableBodyProps) => {
   return (
-    <tbody>
+    <div className="table__body">
       {data.map((test) => {
         return (
-          <tr key={test.id} className="table__tr" data-site={test.siteId}>
-            {columns.map(({ accessor }) => {
-              return renderCell(accessor, test);
-            })}
-          </tr>
+          <div className="table__row">
+            <div className="table__cell table__cell--name">{test.name}</div>
+            <div className="table__cell">{formatType(test.type)}</div>
+            <div
+              className="table__cell table__cell--status"
+              data-status={test.status}
+            >
+              {capitalize(test.status)}
+            </div>
+            <div className="table__cell">{test.url}</div>
+            <div className="table__button">
+              <DashboardLink active={test.status !== "DRAFT"} id={test.id} />
+            </div>
+            <div className="table__coloring" data-site={test.siteId}></div>
+          </div>
         );
       })}
-    </tbody>
+    </div>
   );
 };
 

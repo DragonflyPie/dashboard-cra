@@ -1,4 +1,4 @@
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 import { LoaderFunctionArgs } from "react-router-dom";
 
 const url = process.env.REACT_APP_BACKEND_URL;

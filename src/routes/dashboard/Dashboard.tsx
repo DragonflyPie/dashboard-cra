@@ -3,6 +3,7 @@ import Search from "../../components/search/Search";
 import useFetchData from "../../utils/useFetchData";
 import Table from "../../components/table/Table";
 import NotFound from "../../components/notFound/NotFound";
+import Spinner from "../../components/spinner/Spinner";
 
 function Dashboard() {
   const [filter, setFilter] = useState("");
@@ -20,12 +21,14 @@ function Dashboard() {
 
   return (
     <div className="dashboard">
-      <h1>Dashboard</h1>
+      <h1 className="dashboard__heading">Dashboard</h1>
       <Search count={count} handleChange={handleChange} filter={filter} />
       {fetchState === "fail" ? (
         <div className="error">Something went wrong</div>
       ) : fetchState === "loading" ? (
-        <div className="spinner dashboard__spinner"></div>
+        <div className="dashboard__spinner-container">
+          <Spinner />
+        </div>
       ) : count === 0 ? (
         <NotFound handleClick={clearFilter} />
       ) : (

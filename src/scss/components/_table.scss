@@ -34,13 +34,6 @@
 //   overflow: hidden;
 //   align-items: center;
 
-//   &__coloring {
-//     position: absolute;
-//     background-color: red;
-//     width: 4px;
-//     height: 100%;
-//   }
-
 //   &__cell {
 //     text-transform: lowercase;
 
@@ -51,23 +44,38 @@
 // }
 
 .table {
+  display: flex;
+  min-width: toRem(750);
+  flex-direction: column;
+  gap: toRem(10);
   width: 100%;
-  border-collapse: separate;
-  border-spacing: 0 5px;
+  font-size: toRem(12);
+
   font-family: $roboto;
   color: $gray--table;
 
-  &__thead {
+  &__heading {
     color: $gray--thead;
-    font-size: 11px;
+    font-size: toRem(11);
+    display: grid;
+    gap: toRem(10);
+    grid-template-columns: 30% 1fr 1fr 1fr 1fr;
+    padding: 0 toRem(12) 0 toRem(15);
+    cursor: pointer;
   }
 
-  &__thead-group {
-    width: 50px;
+  &__heading-group {
+    width: toRem(50);
     display: flex;
     flex-shrink: 0;
     justify-content: flex-start;
-    gap: 8px;
+    gap: toRem(8);
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(5);
   }
 
   &__icon {
@@ -80,29 +88,60 @@
     }
   }
 
-  &__tr {
-    height: 70px;
+  &__row {
+    display: grid;
+    width: 100%;
+    gap: 10px;
+    grid-template-columns: 30% 1fr 1fr 1fr 1fr;
+    padding: 0 toRem(12) 0 toRem(15);
+
     background-color: white;
     position: relative;
     overflow: hidden;
+    border-radius: 4px;
+    align-items: center;
+    transition: box-shadow 300ms;
 
-    ::before {
-      content: "";
-      background-color: red;
-      width: 4px;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      border-radius: 10px;
+    &:hover {
+      box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
     }
   }
 
-  &__td {
-    vertical-align: middle;
-    padding-left: 15px;
-    padding-right: 12px;
+  &__coloring {
+    position: absolute;
+    background-color: red;
+    width: toRem(4);
+    height: 100%;
+    left: 0;
+    top: 0;
+
+    &[data-site="1"] {
+      background-color: $site-red;
+    }
+
+    &[data-site="2"] {
+      background-color: $site-magenta;
+    }
+
+    &[data-site="3"] {
+      background-color: $site-purple;
+    }
+  }
+
+  &__cell {
+    display: flex;
     overflow: hidden;
+    height: toRem(70);
+    align-items: center;
+
+    &--status {
+      font-weight: 500;
+    }
+
+    &--name {
+      font-weight: 500;
+      font-size: toRem(13);
+    }
 
     &[data-status="ONLINE"] {
       color: $status-green;
@@ -115,11 +154,8 @@
     }
   }
 
-  &__th {
-    padding-left: 15px;
-    padding-right: 12px;
-    padding-bottom: 12px;
-
-    cursor: pointer;
+  &__button {
+    display: flex;
+    justify-content: center;
   }
 }

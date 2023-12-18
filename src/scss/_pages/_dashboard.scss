@@ -1,6 +1,14 @@
 .dashboard {
-  padding: 41px 52px 49px 48px;
-}
-.dashboard {
+  padding: toRem(41) toRem(52) toRem(49) toRem(48);
   width: 100%;
+
+  &__heading {
+    padding-bottom: toRem(40);
+  }
+
+  &__spinner-container {
+    display: flex;
+    padding-top: toRem(200);
+    justify-content: center;
+  }
 }

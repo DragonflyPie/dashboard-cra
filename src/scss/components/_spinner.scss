@@ -1,11 +1,10 @@
 .spinner {
-  width: 48px;
-  height: 48px;
+  width: toRem(48);
+  height: toRem(48);
   border: 5px solid #fff;
   border-bottom-color: #ff3d00;
   border-radius: 50%;
   display: inline-block;
-  box-sizing: border-box;
   animation: rotation 1s linear infinite;
 }
 

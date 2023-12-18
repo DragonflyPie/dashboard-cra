@@ -19,32 +19,30 @@ const TableHead = ({
   });
 
   return (
-    <thead className="table__thead">
-      <tr>
-        {columns.map(({ label, accessor }) => {
-          if (accessor === "button") {
-            return <th key={accessor} />;
-          }
+    <div className="table__heading">
+      {columns.map(({ label, accessor }) => {
+        if (accessor === "button") {
+          return <div key={accessor} />;
+        }
 
-          return (
-            <th
-              key={accessor}
-              onClick={() => handleChangeSorting(accessor)}
-              className="table__th"
-            >
-              <div className="table__thead-group">
-                {label}
-                {sortBy === accessor && (
-                  <div className={iconClass}>
-                    <SortChevron />
-                  </div>
-                )}
-              </div>
-            </th>
-          );
-        })}
-      </tr>
-    </thead>
+        return (
+          <div
+            key={accessor}
+            onClick={() => handleChangeSorting(accessor)}
+            className=""
+          >
+            <div className="table__heading-group">
+              {label}
+              {sortBy === accessor && (
+                <div className={iconClass}>
+                  <SortChevron />
+                </div>
+              )}
+            </div>
+          </div>
+        );
+      })}
+    </div>
   );
 };
 

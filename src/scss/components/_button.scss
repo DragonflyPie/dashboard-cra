@@ -1,12 +1,12 @@
 .button {
-  width: 95px;
-  height: 30px;
-  border-radius: 10px;
+  width: toRem(95);
+  height: toRem(30);
+  border-radius: toRem(10);
   background: $emerald;
   border: none;
   font-family: $montserrat;
   font-weight: 600;
-  font-size: 12px;
+  font-size: toRem(12);
   color: white;
   text-decoration: none;
   display: inline-flex;
@@ -16,9 +16,5 @@
 
   &--inactive {
     background-color: $gray--inactive;
-  }
-
-  &:hover {
-    color: $gray--light;
   }
 }

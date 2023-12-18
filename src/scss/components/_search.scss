@@ -2,24 +2,24 @@
   width: 100%;
   display: flex;
   position: relative;
-  font-size: 14px;
-  margin-bottom: 30px;
+  font-size: toRem(14);
+  margin-bottom: toRem(30);
 
   &__icon {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 13px;
+    left: toRem(13);
     margin: auto 0;
   }
 
   &__input {
-    height: 45px;
+    height: toRem(45);
     width: 100%;
-    border-radius: 15px;
+    border-radius: toRem(15);
     border: 1px solid $gray--light;
-    padding-left: 37px;
-    padding-right: 82px;
+    padding-left: toRem(37);
+    padding-right: toRem(82);
 
     &::placeholder {
       color: $gray--placeholder;
@@ -28,7 +28,7 @@
 
   &__count {
     position: absolute;
-    right: 17px;
+    right: toRem(17);
     top: 0;
     bottom: 0;
     margin: auto 0;
